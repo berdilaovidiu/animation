@@ -1,9 +1,13 @@
 package home.oberdila.animation;
 
-import javax.swing.*;
+import net.miginfocom.swing.MigLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,7 +37,7 @@ public class ExpandAnimation {
 
     private static Container getContentPane() {
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5,5));
+        panel.setLayout(new MigLayout("wrap 1"));
         panel.add(new CustomPanel(100, 500));
         panel.add(new CustomPanel(100, 500));
         panel.add(new CustomPanel(100, 500));
