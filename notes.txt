@@ -1,0 +1,11 @@
+Improvements :
+
+- simple animations can be composed into more complex animations
+- support for transformations (translations, rotations, scaling)
+- effects can be added like blur, disolve, glow
+- non linear time functions can be added
+- offer a nice and generic API
+- make an absteraction of time, time function and resolution (provide them as configurable properties)
+- write tests
+- provide nice examples
+- get inspiration from other animation APIs (jquery and netbeans for example)

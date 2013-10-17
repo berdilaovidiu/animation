@@ -24,18 +24,27 @@ public class Animator {
         final Timer timer;
         timer = new Timer(DELAY, new ActionListener() {
             int timeElapsed = 0;
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 timeElapsed += DELAY;
                 int duration = animation.getDuration();
-                double progress = timeElapsed  / (double) duration;
+                double progress = 0;
+                switch (animation.getMovement()) {
+                    case LINEAR:
+                        progress = timeElapsed / (double) duration;
+                        break;
+                    case NONLINEAR:
+                        progress = getSinusFunction(timeElapsed / (double) duration);
+                        break;
+                }
                 if (timeElapsed <= duration) {
-                    switch (animation.getProperty()){
+                    switch (animation.getProperty()) {
                         case HEIGHT:
-                            container.setPreferredSize(new Dimension(container.getWidth(), (Integer)animation.getDiscreteValue().getValue(progress)));
+                            container.setPreferredSize(new Dimension(container.getWidth(), (Integer) animation.getDiscreteValue().getValue(progress)));
                             break;
                         case COLOR:
-                            container.setBackground((Color)animation.getDiscreteValue().getValue(progress));
+                            container.setBackground((Color) animation.getDiscreteValue().getValue(progress));
                             break;
                     }
                     container.revalidate();
@@ -46,6 +55,10 @@ public class Animator {
         });
         timer.start();
 
+    }
+
+    private float getSinusFunction(double progress) {
+        return (float) Math.sin(progress * (float) Math.PI / 2);
     }
 
 }

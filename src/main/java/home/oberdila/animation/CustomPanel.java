@@ -73,13 +73,13 @@ public class CustomPanel extends JPanel {
     }
 
     private void expand() {
-        animator.run(this, new Animation<Integer>(300, Animation.Property.HEIGHT, new DiscreteInteger(minHeight, maxHeight)));
+        animator.run(this, new Animation<Integer>(700, Animation.Property.HEIGHT, Animation.Movement.NONLINEAR, new DiscreteInteger(minHeight, maxHeight)));
         expanded = true;
     }
 
     private void collapse() {
         expanded = false;
-        animator.run(this, new Animation<Integer>(300, Animation.Property.HEIGHT, new DiscreteInteger(maxHeight, minHeight)));
+        animator.run(this, new Animation<Integer>(700, Animation.Property.HEIGHT, new DiscreteInteger(maxHeight, minHeight)));
     }
 
     public boolean isExpanded() {
