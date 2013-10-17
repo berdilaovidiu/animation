@@ -1,4 +1,4 @@
-package home.oberdila.animation;
+package home.oberdila.animation.value;
 
 /**
  * Created with IntelliJ IDEA.

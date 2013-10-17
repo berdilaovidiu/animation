@@ -1,4 +1,6 @@
-package home.oberdila.animation;
+package home.oberdila.animation.core;
+
+import home.oberdila.animation.value.DiscreteValue;
 
 /**
  * User: ovidiu

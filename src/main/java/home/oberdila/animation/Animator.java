@@ -1,9 +1,9 @@
 package home.oberdila.animation;
 
+import home.oberdila.animation.core.Animation;
+
 import javax.swing.Timer;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
